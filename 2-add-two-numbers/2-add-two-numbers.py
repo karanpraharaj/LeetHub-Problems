@@ -26,6 +26,7 @@ class Solution:
             else:
                 l3.val = (sum+carry)%10
                 carry = 1
+                
                 if l1.next == None and l2.next == None:
                     l3.next = ListNode(carry)
                     break
@@ -39,7 +40,7 @@ class Solution:
             if l1==None and l2!=None:
                 l1 = ListNode()
                 l1.val = 0
-
+                
             if l1!=None and l2==None:
                 l2 = ListNode()
                 l2.val = 0
