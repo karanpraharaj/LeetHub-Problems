@@ -6,4 +6,4 @@ class Solution:
             if i not in counter:
                 disappeared.append(i)
                 
-        return disappeared
+        return disappeared 
