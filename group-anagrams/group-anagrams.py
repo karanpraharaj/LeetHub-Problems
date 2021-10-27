@@ -1,16 +1,12 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagrams = {}
+        if not strs:
+            return None
         
-        for i in range(len(strs)):
-            charcount = [0]*26
-            for c in strs[i]:
-                charcount[ord(c)-ord('a')] +=1
-            
-            if tuple(charcount) not in anagrams:
-                anagrams[tuple(charcount)] = [strs[i]]
-            
-            else:
-                anagrams[tuple(charcount)].append(strs[i])
+        anagrams = defaultdict(list)
         
-        return (anagrams.values())
+        for i in strs:
+            anchor = ''.join(sorted(i))
+            anagrams[anchor].append(i)
+        
+        return anagrams.values()
